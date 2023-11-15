@@ -2,9 +2,10 @@ package java_basics_threadpools;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class ThreadPoolDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
@@ -22,9 +23,10 @@ public class ThreadPoolDemo {
 
         executor.shutdown(); // Rejects any new tasks from being submitted. Gracefully shuts down the service
 
-        while(!executor.isTerminated()){
+        /*while(!executor.isTerminated()){
 
-        }
+        }*/
+        executor.awaitTermination(10, TimeUnit.SECONDS);
 
         System.out.println("submitted all tasks...");
     }
