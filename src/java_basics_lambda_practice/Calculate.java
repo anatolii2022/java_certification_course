@@ -1,6 +1,7 @@
 package java_basics_lambda_practice;
 
 @FunctionalInterface
-interface Walkable {
-    void walk();
+interface Calculate {
+
+    public int compute(int a, int b);
 }

@@ -1,6 +1,6 @@
 package java_basics_lambda_practice;
 
 @FunctionalInterface
-interface Walkable {
-    void walk();
+interface MyGenericInterface <T>{
+    public T work(T t);
 }
